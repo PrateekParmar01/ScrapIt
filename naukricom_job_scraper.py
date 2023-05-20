@@ -6,8 +6,10 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from bs4 import BeautifulSoup as soup
 import csv
 csv.register_dialect('escaped', escapechar='\\', doublequote=True, quoting=csv.QUOTE_ALL)
-sear=str(input("What type of job are you looking for?"))
-location=str(input("What location do you want to search around?" ))
+# sear=str(input("What type of job are you looking for?"))
+sear = "web developer"
+location = "india"
+# location=str(input("What location do you want to search around?" ))
 
 naukriurl= f'https://www.naukri.com/{sear.replace(" ", "-")}-jobs-in-{location.replace(" ", "+")}'
 filename = f"{sear} jobs in {location} naukri.csv"

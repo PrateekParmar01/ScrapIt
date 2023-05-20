@@ -4,7 +4,8 @@ import requests
 import csv
 
 print("Put some skills your are not familiar with")
-unfamiliar_skills = input('>')
+# unfamiliar_skills = input('>')
+unfamiliar_skills = 'web developer'
 print(f"Filtering Out {unfamiliar_skills}")
 seen=set()
 def find_jobs():
