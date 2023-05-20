@@ -3,8 +3,12 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium_stealth import stealth
+import warnings
 
-
+warnings.filterwarnings("ignore")
+csv.register_dialect(
+    "escaped", escapechar="\\", doublequote=True, quoting=csv.QUOTE_ALL
+)
 def find_jobs(query: str, location: str):
     url = f"https://in.indeed.com/jobs?q={query.replace(' ','+')}&l={location}"
     chrome_options = webdriver.ChromeOptions()
@@ -72,5 +76,3 @@ def find_jobs(query: str, location: str):
     
     return entries
 
-
-print(find_jobs("data analyst", "India"))
